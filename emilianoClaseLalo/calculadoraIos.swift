@@ -10,14 +10,54 @@ import SwiftUI
 
 
 class EstadoCalculadora: ObservableObject{
-    @Published var textoNumeros : String = "0"
+    @Published var textoNumeros : String = ""
+    @Published var estadoInicial = false
+    
+    @Published var banderaNuevoNumero = false
+    
+    @Published var num1 : Int = 0
+    
+    var operacion : String = ""
+    
+    func cleanAll() {
+        textoNumeros = ""
+        estadoInicial = true
+        operacion = ""
+        num1 = 0
+    }
+    
+    func cleanNumero() {
+        textoNumeros = ""
+    }
     
     func capturarTecla(caracter: String) {
+        
+        if banderaNuevoNumero {
+            cleanNumero()
+        }
+        
         textoNumeros = "\(textoNumeros)\(caracter)"
     }
     
     func capturarOperacion(operacion: String){
+        self.operacion = operacion
+        guardarNum1()
         
+    }
+    func guardarNum1(){
+        self.num1 = Int(textoNumeros) ?? 0
+        banderaNuevoNumero = true
+    }
+    
+    func realizarOperacion() {
+        switch self.operacion{
+        case "x":
+            textoNumeros = "\(self.num1 * (Int(textoNumeros) ?? 0))"
+            break
+        default:
+            textoNumeros = " \(-10)"
+            
+        }
     }
     
 }
@@ -41,12 +81,13 @@ struct calculadoraIos: View {
                         .foregroundColor(.white)
                     
                 }
-                
+                Text("Debug Operacion:\(estadoCalculadora.operacion) num1 : \(estadoCalculadora.num1)").foregroundColor(.white)
                 HStack{
                     botonesNumeros(estadoCalculadora: estadoCalculadora, lblNumero: "1")
                     botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "2")
                     botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "3")
                     botonesAcciones(estadoCalculadora: estadoCalculadora,lblsimbolo: "x")
+                    
                 }
                 HStack{
                     botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "4")
@@ -65,7 +106,8 @@ struct calculadoraIos: View {
                     
                     cleanAllBoton(estadoCalculadora: estadoCalculadora)
                     
-                    botonesAcciones(estadoCalculadora: estadoCalculadora,lblsimbolo: "=")
+                    //botonesAcciones(estadoCalculadora: estadoCalculadora,lblsimbolo: "=")
+                    botonIgual(estadoCalculadora: estadoCalculadora,lblsimbolo: "=")
                     botonesAcciones(estadoCalculadora: estadoCalculadora,lblsimbolo: "/")
                 }
                 
@@ -97,13 +139,11 @@ struct cleanAllBoton: View {
     
     @ObservedObject var estadoCalculadora : EstadoCalculadora
     
-    func clean() {
-        estadoCalculadora.textoNumeros = ""
-    }
+    
     
     var body: some View {
         Button(action: {
-            clean()
+            estadoCalculadora.cleanAll()
         }, label: {
                 
             ZStack{
@@ -119,6 +159,7 @@ struct cleanAllBoton: View {
     }
     
 }
+
 
 
 
@@ -142,7 +183,25 @@ struct botonesNumeros: View {
 }
 
 
+struct botonIgual: View {
     
+    @ObservedObject var estadoCalculadora : EstadoCalculadora
+    
+    var lblsimbolo: String
+    
+    var body: some View {
+        Button(action: {
+            estadoCalculadora.capturarOperacion(operacion: lblsimbolo)
+            estadoCalculadora.realizarOperacion()
+        }, label: {
+                
+            CustomColorBoton(color: .yellow, lblString: lblsimbolo)
+                
+            
+        })
+            
+    }
+}
 
 
 struct botonesAcciones: View {
@@ -153,7 +212,7 @@ struct botonesAcciones: View {
     
     var body: some View {
         Button(action: {
-            estadoCalculadora.capturarTecla(caracter: lblsimbolo)
+            estadoCalculadora.capturarOperacion(operacion: lblsimbolo)
         }, label: {
                 
             CustomColorBoton(color: .yellow, lblString: lblsimbolo)

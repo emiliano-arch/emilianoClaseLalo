@@ -11,7 +11,8 @@ import SwiftUI
 struct emilianoClaseLaloApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            calculadoraIos()
         }
     }
 }
