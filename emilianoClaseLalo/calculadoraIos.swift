@@ -7,62 +7,6 @@
 
 import SwiftUI
 
-
-
-class EstadoCalculadora: ObservableObject{
-    @Published var textoNumeros : String = ""
-    @Published var estadoInicial = false
-    
-    @Published var banderaNuevoNumero = false
-    
-    @Published var num1 : Int = 0
-    
-    var operacion : String = ""
-    
-    func cleanAll() {
-        textoNumeros = ""
-        estadoInicial = true
-        operacion = ""
-        num1 = 0
-    }
-    
-    func cleanNumero() {
-        textoNumeros = ""
-    }
-    
-    func capturarTecla(caracter: String) {
-        
-        if banderaNuevoNumero {
-            cleanNumero()
-        }
-        
-        textoNumeros = "\(textoNumeros)\(caracter)"
-    }
-    
-    func capturarOperacion(operacion: String){
-        self.operacion = operacion
-        guardarNum1()
-        
-    }
-    func guardarNum1(){
-        self.num1 = Int(textoNumeros) ?? 0
-        banderaNuevoNumero = true
-    }
-    
-    func realizarOperacion() {
-        switch self.operacion{
-        case "x":
-            textoNumeros = "\(self.num1 * (Int(textoNumeros) ?? 0))"
-            break
-        default:
-            textoNumeros = " \(-10)"
-            
-        }
-    }
-    
-}
-
-
 struct calculadoraIos: View {
     
     
@@ -82,6 +26,7 @@ struct calculadoraIos: View {
                     
                 }
                 Text("Debug Operacion:\(estadoCalculadora.operacion) num1 : \(estadoCalculadora.num1)").foregroundColor(.white)
+                Divider()
                 HStack{
                     botonesNumeros(estadoCalculadora: estadoCalculadora, lblNumero: "1")
                     botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "2")
@@ -106,8 +51,7 @@ struct calculadoraIos: View {
                     
                     cleanAllBoton(estadoCalculadora: estadoCalculadora)
                     
-                    //botonesAcciones(estadoCalculadora: estadoCalculadora,lblsimbolo: "=")
-                    botonIgual(estadoCalculadora: estadoCalculadora,lblsimbolo: "=")
+                    botonIgual(estadoCalculadora: estadoCalculadora)
                     botonesAcciones(estadoCalculadora: estadoCalculadora,lblsimbolo: "/")
                 }
                 
@@ -120,113 +64,6 @@ struct calculadoraIos: View {
     }
 }
 
-struct CustomColorBoton: View {
-    
-    var color : Color
-    var lblString: String
-    
-    var body: some View {
-        ZStack{
-            color
-            Text(lblString)
-                .font(.largeTitle)
-                .foregroundColor(.black)
-        }
-    }
-}
-
-struct cleanAllBoton: View {
-    
-    @ObservedObject var estadoCalculadora : EstadoCalculadora
-    
-    
-    
-    var body: some View {
-        Button(action: {
-            estadoCalculadora.cleanAll()
-        }, label: {
-                
-            ZStack{
-                Color.yellow
-                Text("AC")
-                    .font(.largeTitle)
-                    .foregroundColor(.black)
-            }
-                
-            
-        })
-            
-    }
-    
-}
-
-
-
-
-struct botonesNumeros: View {
-    @ObservedObject var estadoCalculadora : EstadoCalculadora
-    
-   
-    var lblNumero : String
-    
-    
-    
-    var body: some View {
-        Button(action: {
-            estadoCalculadora.capturarTecla(caracter: lblNumero)
-            }, label: {
-                CustomColorBoton(color: .gray, lblString: lblNumero)
-                
-            })
-            
-    }
-}
-
-
-struct botonIgual: View {
-    
-    @ObservedObject var estadoCalculadora : EstadoCalculadora
-    
-    var lblsimbolo: String
-    
-    var body: some View {
-        Button(action: {
-            estadoCalculadora.capturarOperacion(operacion: lblsimbolo)
-            estadoCalculadora.realizarOperacion()
-        }, label: {
-                
-            CustomColorBoton(color: .yellow, lblString: lblsimbolo)
-                
-            
-        })
-            
-    }
-}
-
-
-struct botonesAcciones: View {
-    
-    @ObservedObject var estadoCalculadora : EstadoCalculadora
-    
-    var lblsimbolo: String
-    
-    var body: some View {
-        Button(action: {
-            estadoCalculadora.capturarOperacion(operacion: lblsimbolo)
-        }, label: {
-                
-            CustomColorBoton(color: .yellow, lblString: lblsimbolo)
-                
-            
-        })
-            
-    }
-}
-
-
-
-
-
 
 
 
@@ -235,3 +72,4 @@ struct calculadoraIos_Previews: PreviewProvider {
         calculadoraIos()
     }
 }
+

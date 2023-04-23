@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6153AA6B29F59AD400D0CE4E /* calculadora.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA6A29F59AD400D0CE4E /* calculadora.swift */; };
+		6153AA6D29F59BE200D0CE4E /* Libs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA6C29F59BE200D0CE4E /* Libs.swift */; };
 		A29822D829E47C5B00855C48 /* emilianoClaseLaloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29822D729E47C5B00855C48 /* emilianoClaseLaloApp.swift */; };
 		A29822DA29E47C5B00855C48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29822D929E47C5B00855C48 /* ContentView.swift */; };
 		A29822DC29E47C5C00855C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A29822DB29E47C5C00855C48 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6153AA6A29F59AD400D0CE4E /* calculadora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculadora.swift; sourceTree = "<group>"; };
+		6153AA6C29F59BE200D0CE4E /* Libs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libs.swift; sourceTree = "<group>"; };
 		A29822D429E47C5B00855C48 /* emilianoClaseLalo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emilianoClaseLalo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29822D729E47C5B00855C48 /* emilianoClaseLaloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emilianoClaseLaloApp.swift; sourceTree = "<group>"; };
 		A29822D929E47C5B00855C48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 				A29822DD29E47C5C00855C48 /* Preview Content */,
 				A29822E529E47C7A00855C48 /* operacionesVista.swift */,
 				A29822E729E47E2500855C48 /* calculadoraIos.swift */,
+				6153AA6C29F59BE200D0CE4E /* Libs.swift */,
+				6153AA6A29F59AD400D0CE4E /* calculadora.swift */,
 			);
 			path = emilianoClaseLalo;
 			sourceTree = "<group>";
@@ -144,7 +150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29822E629E47C7A00855C48 /* operacionesVista.swift in Sources */,
+				6153AA6B29F59AD400D0CE4E /* calculadora.swift in Sources */,
 				A29822E829E47E2500855C48 /* calculadoraIos.swift in Sources */,
+				6153AA6D29F59BE200D0CE4E /* Libs.swift in Sources */,
 				A29822DA29E47C5B00855C48 /* ContentView.swift in Sources */,
 				A29822D829E47C5B00855C48 /* emilianoClaseLaloApp.swift in Sources */,
 			);
