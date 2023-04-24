@@ -8,16 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var mostrarVistaModal = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Button("Mostrar vista en pantalla completa") {
+            mostrarVistaModal.toggle()
         }
-        .padding()
+        .fullScreenCover(isPresented: $mostrarVistaModal, content: {
+            OtraVista()
+        })
     }
 }
+
+struct OtraVista: View {
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        VStack {
+            Text("Esta es otra vista en pantalla completa")
+            Button("Cerrar") {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -9,81 +9,84 @@ import Foundation
 import SwiftUI
 
 
-class EstadoCalculadora: ObservableObject{
-    @Published var textoNumeros : String = "0"
-    @Published var estadoInicial = true
-    
-    @Published var banderaNuevoNumero = false
-    @Published var num1 : Int = 0
-    
-    var operacion : String = ""
-    
-    func cleanAll() {
-        textoNumeros = "0"
-        estadoInicial = true
-        operacion = ""
-        num1 = 0
+
+//MARK: funciones de textos
+struct Title: View {
+    var texto: String
+    var body: some View {
         
-    }
-    
-    func cleanNumero() {
-        textoNumeros = "0"
-        estadoInicial = true
-    }
-    
-    func capturarTecla(caracter: String) {
-        
-        if banderaNuevoNumero {
-            cleanNumero()
-            banderaNuevoNumero = false
-        }
-        if estadoInicial {
-            textoNumeros = "\(caracter)"
-            estadoInicial = false
-            
-        } else {
-            textoNumeros = "\(textoNumeros)\(caracter)"
-        }
-        
-        
-    }
-    
-    func capturarOperacion(operacion: String){
-        self.operacion = operacion
-        guardarNum1()
-        
-    }
-    func guardarNum1(){
-        self.num1 = Int(textoNumeros) ?? 0
-        banderaNuevoNumero = true
-    }
-    
-    func realizarOperacion() {
-        
-        switch operacion{
-            
-        case "x":
-            textoNumeros = "\(self.num1 * (Int(textoNumeros) ?? 0))"
-            break
-        case "+":
-            textoNumeros = "\(self.num1 + (Int(textoNumeros) ?? 0))"
-            break
-        case "-":
-            textoNumeros = "\(self.num1 - (Int(textoNumeros) ?? 0))"
-            break
-        case "/":
-            textoNumeros = "\(self.num1 / (Int(textoNumeros) ?? 0))"
-            break
-            
-        default:
-            textoNumeros = " \(-10)"
-            
-        }
+        Text(texto)
+            .font(.largeTitle)
+            .foregroundColor(.black)
+            .bold()
     }
     
 }
 
+struct TareasCustom: View {
+    var listTareas: [tarea]
+    var body: some View {
+        
+        
+        
+        List(listTareas) { tarea in
+            Text(tarea.tareaName)
+                .font(.subheadline)
+                .foregroundColor(.gray)
+            //Divider()
+        }
+            
+    }
+    
+}
 
+//MARK: Funciones de asignacion
+
+struct asignarMaterias: View {
+    @ObservedObject var materiasList : Materias
+    @State var show = false
+    
+    
+    var body: some View {
+        VStack{
+            Button("nueva materia") {
+                show.toggle()
+            }
+            .fullScreenCover(isPresented: $show, content: {
+                newMateria(materiasList: materiasList)
+            })
+            
+            
+        }
+        
+    }
+}
+
+struct asignarTarea: View {
+    @ObservedObject var materiasList : Materias
+    @State var show = false
+    var opcion: options
+    
+    
+    var body: some View {
+        VStack{
+            Button("nueva tarea") {
+                show.toggle()
+            }
+            .fullScreenCover(isPresented: $show, content: {
+                newTarea(opcion: opcion, materiasList: materiasList)
+            })
+            
+            
+        }
+        
+    }
+}
+
+
+
+
+// MARK: funciones de la calculadora
 struct CustomColorBoton: View {
     
     var color : Color
@@ -98,7 +101,6 @@ struct CustomColorBoton: View {
         }
     }
 }
-
 
 struct cleanAllBoton: View {
     
@@ -122,8 +124,6 @@ struct cleanAllBoton: View {
     }
     
 }
-
-
 
 struct botonesNumeros: View {
     @ObservedObject var estadoCalculadora : EstadoCalculadora
@@ -157,7 +157,6 @@ struct botonIgual: View {
             
     }
 }
-
 
 struct botonesAcciones: View {
     

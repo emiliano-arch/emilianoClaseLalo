@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6153AA6B29F59AD400D0CE4E /* calculadora.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA6A29F59AD400D0CE4E /* calculadora.swift */; };
 		6153AA6D29F59BE200D0CE4E /* Libs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA6C29F59BE200D0CE4E /* Libs.swift */; };
+		6153AA6F29F5BB1600D0CE4E /* navegacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA6E29F5BB1600D0CE4E /* navegacion.swift */; };
+		6153AA7129F5BD3E00D0CE4E /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA7029F5BD3E00D0CE4E /* models.swift */; };
+		6153AA7329F5BF1200D0CE4E /* MateriaCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA7229F5BF1200D0CE4E /* MateriaCustom.swift */; };
+		6153AA7529F5CC1200D0CE4E /* newTarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA7429F5CC1200D0CE4E /* newTarea.swift */; };
+		6153AA7729F5D45B00D0CE4E /* materiaRenglonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA7629F5D45B00D0CE4E /* materiaRenglonCustom.swift */; };
+		6153AA7929F5D6C500D0CE4E /* menuNavegadores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA7829F5D6C500D0CE4E /* menuNavegadores.swift */; };
+		6153AA7B29F5D8B500D0CE4E /* navegacionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA7A29F5D8B500D0CE4E /* navegacionTable.swift */; };
+		6153AA7D29F60F1A00D0CE4E /* newMateria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA7C29F60F1A00D0CE4E /* newMateria.swift */; };
+		6153AA8129F6406500D0CE4E /* TareaRenglonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA8029F6406500D0CE4E /* TareaRenglonCustom.swift */; };
 		A29822D829E47C5B00855C48 /* emilianoClaseLaloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29822D729E47C5B00855C48 /* emilianoClaseLaloApp.swift */; };
 		A29822DA29E47C5B00855C48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29822D929E47C5B00855C48 /* ContentView.swift */; };
 		A29822DC29E47C5C00855C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A29822DB29E47C5C00855C48 /* Assets.xcassets */; };
@@ -18,8 +26,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6153AA6A29F59AD400D0CE4E /* calculadora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculadora.swift; sourceTree = "<group>"; };
 		6153AA6C29F59BE200D0CE4E /* Libs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libs.swift; sourceTree = "<group>"; };
+		6153AA6E29F5BB1600D0CE4E /* navegacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navegacion.swift; sourceTree = "<group>"; };
+		6153AA7029F5BD3E00D0CE4E /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
+		6153AA7229F5BF1200D0CE4E /* MateriaCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateriaCustom.swift; sourceTree = "<group>"; };
+		6153AA7429F5CC1200D0CE4E /* newTarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTarea.swift; sourceTree = "<group>"; };
+		6153AA7629F5D45B00D0CE4E /* materiaRenglonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = materiaRenglonCustom.swift; sourceTree = "<group>"; };
+		6153AA7829F5D6C500D0CE4E /* menuNavegadores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuNavegadores.swift; sourceTree = "<group>"; };
+		6153AA7A29F5D8B500D0CE4E /* navegacionTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navegacionTable.swift; sourceTree = "<group>"; };
+		6153AA7C29F60F1A00D0CE4E /* newMateria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newMateria.swift; sourceTree = "<group>"; };
+		6153AA8029F6406500D0CE4E /* TareaRenglonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TareaRenglonCustom.swift; sourceTree = "<group>"; };
 		A29822D429E47C5B00855C48 /* emilianoClaseLalo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emilianoClaseLalo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29822D729E47C5B00855C48 /* emilianoClaseLaloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emilianoClaseLaloApp.swift; sourceTree = "<group>"; };
 		A29822D929E47C5B00855C48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +56,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6153AA7E29F621BE00D0CE4E /* calculadora */ = {
+			isa = PBXGroup;
+			children = (
+				A29822E529E47C7A00855C48 /* operacionesVista.swift */,
+				A29822E729E47E2500855C48 /* calculadoraIos.swift */,
+			);
+			path = calculadora;
+			sourceTree = "<group>";
+		};
+		6153AA7F29F621F200D0CE4E /* renglones */ = {
+			isa = PBXGroup;
+			children = (
+				6153AA7629F5D45B00D0CE4E /* materiaRenglonCustom.swift */,
+				6153AA8029F6406500D0CE4E /* TareaRenglonCustom.swift */,
+			);
+			path = renglones;
+			sourceTree = "<group>";
+		};
 		A29822CB29E47C5B00855C48 = {
 			isa = PBXGroup;
 			children = (
@@ -59,14 +93,20 @@
 		A29822D629E47C5B00855C48 /* emilianoClaseLalo */ = {
 			isa = PBXGroup;
 			children = (
+				6153AA7F29F621F200D0CE4E /* renglones */,
+				6153AA7E29F621BE00D0CE4E /* calculadora */,
 				A29822D729E47C5B00855C48 /* emilianoClaseLaloApp.swift */,
 				A29822D929E47C5B00855C48 /* ContentView.swift */,
 				A29822DB29E47C5C00855C48 /* Assets.xcassets */,
 				A29822DD29E47C5C00855C48 /* Preview Content */,
-				A29822E529E47C7A00855C48 /* operacionesVista.swift */,
-				A29822E729E47E2500855C48 /* calculadoraIos.swift */,
+				6153AA7829F5D6C500D0CE4E /* menuNavegadores.swift */,
+				6153AA6E29F5BB1600D0CE4E /* navegacion.swift */,
+				6153AA7229F5BF1200D0CE4E /* MateriaCustom.swift */,
+				6153AA7429F5CC1200D0CE4E /* newTarea.swift */,
+				6153AA7A29F5D8B500D0CE4E /* navegacionTable.swift */,
+				6153AA7C29F60F1A00D0CE4E /* newMateria.swift */,
+				6153AA7029F5BD3E00D0CE4E /* models.swift */,
 				6153AA6C29F59BE200D0CE4E /* Libs.swift */,
-				6153AA6A29F59AD400D0CE4E /* calculadora.swift */,
 			);
 			path = emilianoClaseLalo;
 			sourceTree = "<group>";
@@ -149,11 +189,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6153AA7D29F60F1A00D0CE4E /* newMateria.swift in Sources */,
+				6153AA7929F5D6C500D0CE4E /* menuNavegadores.swift in Sources */,
 				A29822E629E47C7A00855C48 /* operacionesVista.swift in Sources */,
-				6153AA6B29F59AD400D0CE4E /* calculadora.swift in Sources */,
+				6153AA6F29F5BB1600D0CE4E /* navegacion.swift in Sources */,
+				6153AA7129F5BD3E00D0CE4E /* models.swift in Sources */,
 				A29822E829E47E2500855C48 /* calculadoraIos.swift in Sources */,
 				6153AA6D29F59BE200D0CE4E /* Libs.swift in Sources */,
+				6153AA7329F5BF1200D0CE4E /* MateriaCustom.swift in Sources */,
+				6153AA7B29F5D8B500D0CE4E /* navegacionTable.swift in Sources */,
 				A29822DA29E47C5B00855C48 /* ContentView.swift in Sources */,
+				6153AA8129F6406500D0CE4E /* TareaRenglonCustom.swift in Sources */,
+				6153AA7729F5D45B00D0CE4E /* materiaRenglonCustom.swift in Sources */,
+				6153AA7529F5CC1200D0CE4E /* newTarea.swift in Sources */,
 				A29822D829E47C5B00855C48 /* emilianoClaseLaloApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +331,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"emilianoClaseLalo/Preview Content\"";
+				DEVELOPMENT_TEAM = 9429QR4HUB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -314,6 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"emilianoClaseLalo/Preview Content\"";
+				DEVELOPMENT_TEAM = 9429QR4HUB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

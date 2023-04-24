@@ -12,7 +12,8 @@ struct emilianoClaseLaloApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            calculadoraIos()
+            //calculadoraIos()
+            menuNavegadores()
         }
     }
 }
