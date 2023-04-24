@@ -66,6 +66,7 @@ struct asignarTarea: View {
     @ObservedObject var materiasList : Materias
     @State var show = false
     var opcion: options
+    var indiceMateria :Int
     
     
     var body: some View {
@@ -74,7 +75,7 @@ struct asignarTarea: View {
                 show.toggle()
             }
             .fullScreenCover(isPresented: $show, content: {
-                newTarea(opcion: opcion, materiasList: materiasList)
+                newTarea(opcion: opcion, materiasList: materiasList, indiceMateria: indiceMateria)
             })
             
             

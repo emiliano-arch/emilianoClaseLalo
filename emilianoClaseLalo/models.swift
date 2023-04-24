@@ -117,20 +117,22 @@ class EstadoCalculadora: ObservableObject{
 class Materias: ObservableObject, Identifiable{
     
     let id = UUID()
-    @Published var List : [Materia] = []
-    @Published var indice = 0
+    @Published var List : [Materia] = [Materia(materiaName: "ejemplo", tareas: tareas)]
+    
     
     func agregarMateria(materia: Materia) {
         List.append(materia)
     }
-    
-    func aumentar() {
-        self.indice += 1
-    }
-    
-    func agregarTarea(tarea: tarea) {
         
+    func agregarTarea(tarea: tarea, indiceMateria: Int) {
+        List[indiceMateria].tareas.append(tarea)
     }
+    
+    func editarTarea(tareaNameNew: String, indiceMateria: Int, indiceTarea: Int) {
+        List[indiceMateria].tareas[indiceTarea].tareaName = tareaNameNew
+    }
+    
+    
     
     
 }

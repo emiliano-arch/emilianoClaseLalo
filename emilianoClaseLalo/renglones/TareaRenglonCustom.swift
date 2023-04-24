@@ -9,9 +9,10 @@ import SwiftUI
 
 struct TareaRenglonCustom: View {
     //@ObservedObject var materiaPrueba: Materias
+    var tareaUnica : tarea
     var body: some View {
         HStack{
-            //Text(materiaPrueba.List[numMateria].tareas[])
+            Text(tareaUnica.tareaName)
             Spacer()
             Image(systemName:"pencil.circle.fill").foregroundColor(.blue)
                 .frame(width: 50)
@@ -22,6 +23,7 @@ struct TareaRenglonCustom: View {
 
 struct TareaRenglonCustom_Previews: PreviewProvider {
     static var previews: some View {
-        TareaRenglonCustom()
+        let tarea2 : tarea = tarea(tareaName: "ejemplo")
+        TareaRenglonCustom(tareaUnica: tarea2)
     }
 }

@@ -21,42 +21,33 @@ struct MateriaCustom: View {
                 List{
                     ForEach(0..<materia.List[numIndex].tareas.count, id: \.self) { index in
     
-                        NavigationLink(destination: MateriaCustom(materia:materia, numIndex: index)) {
-                                //materiaRenglonCustom(materiaPrueba: $materiasList.List[index].wrappedValue)
-                            
-
-                            
+                        NavigationLink(destination: newTarea(opcion: options.EDIT, tareaName: materia.List[numIndex].tareas[index].tareaName, materiasList: materia,indiceTarea: index, indiceMateria: numIndex) ) {
+                            TareaRenglonCustom(tareaUnica: materia.List[numIndex].tareas[index])
+                                                        
                         }
                     }
                 }
                     .navigationTitle("Materias")
-                    //asignarMaterias(materiasList: materiasList)
+                    
             }
             Spacer()
            
-           // VStack{
-              //  HStack{
-                 //   asignarTarea(materiasList: materia, opcion: options.ADD)
-                //    asignarTarea(materiasList: materia, opcion: options.EDIT)
-              //  }
-                
-            //}
-            
-            
+           VStack{
+               asignarTarea(materiasList: materia, opcion: options.ADD, indiceMateria: numIndex)
+               
+           }
         }
     }
 }
-/*
+
  struct MateriaCustom_Previews: PreviewProvider {
  
  
  static var previews: some View {
  @ObservedObject var materiaPrueba: Materias = Materias()
- Group {
- materiaPrueba.agregarMateria(materia: Materia(materiaName: "Ejemplo", tareas: tareas))
- }
+ 
  
  MateriaCustom(materia: materiaPrueba, numIndex: 0)
  }
  }
- */
+ 

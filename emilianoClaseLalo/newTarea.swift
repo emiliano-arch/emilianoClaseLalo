@@ -13,6 +13,9 @@ struct newTarea: View {
     @ObservedObject var materiasList : Materias
     @Environment(\.presentationMode) var presentationModeTarea
     
+    var indiceTarea: Int?
+    var indiceMateria: Int
+    
     var body: some View {
         VStack{
             TextField(
@@ -32,17 +35,22 @@ struct newTarea: View {
                     if(tareaName != ""){
                         
                         //guardar
-                        
+                        materiasList.agregarTarea(tarea: tarea(tareaName: tareaName), indiceMateria: indiceMateria)
+                            
                         presentationModeTarea.wrappedValue.dismiss()
+                            
+                        
+                        
                         
                     }
                     
                 })
+                
             } else if(opcion == options.EDIT){
                 Button("Editar tarea", action: {
                     
                     if(tareaName != ""){
-                        
+                        materiasList.editarTarea(tareaNameNew: tareaName, indiceMateria: indiceMateria, indiceTarea: indiceTarea!)
                         presentationModeTarea.wrappedValue.dismiss()
                         
                     }
@@ -59,6 +67,6 @@ struct newTarea: View {
 struct newTarea_Previews: PreviewProvider {
     static var previews: some View {
         @ObservedObject var materiasList : Materias = Materias()
-        newTarea(opcion: options.EDIT, materiasList: materiasList)
+        newTarea(opcion: options.EDIT, materiasList: materiasList, indiceMateria: 0)
     }
 }
