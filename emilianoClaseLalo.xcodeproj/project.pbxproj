@@ -17,6 +17,7 @@
 		6153AA7B29F5D8B500D0CE4E /* navegacionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA7A29F5D8B500D0CE4E /* navegacionTable.swift */; };
 		6153AA7D29F60F1A00D0CE4E /* newMateria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA7C29F60F1A00D0CE4E /* newMateria.swift */; };
 		6153AA8129F6406500D0CE4E /* TareaRenglonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153AA8029F6406500D0CE4E /* TareaRenglonCustom.swift */; };
+		A241AEF02A02D0F100D41BFB /* EnviromentObjectsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A241AEEF2A02D0F100D41BFB /* EnviromentObjectsClass.swift */; };
 		A29822D829E47C5B00855C48 /* emilianoClaseLaloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29822D729E47C5B00855C48 /* emilianoClaseLaloApp.swift */; };
 		A29822DA29E47C5B00855C48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29822D929E47C5B00855C48 /* ContentView.swift */; };
 		A29822DC29E47C5C00855C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A29822DB29E47C5C00855C48 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		6153AA7A29F5D8B500D0CE4E /* navegacionTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navegacionTable.swift; sourceTree = "<group>"; };
 		6153AA7C29F60F1A00D0CE4E /* newMateria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newMateria.swift; sourceTree = "<group>"; };
 		6153AA8029F6406500D0CE4E /* TareaRenglonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TareaRenglonCustom.swift; sourceTree = "<group>"; };
+		A241AEEF2A02D0F100D41BFB /* EnviromentObjectsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentObjectsClass.swift; sourceTree = "<group>"; };
 		A29822D429E47C5B00855C48 /* emilianoClaseLalo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emilianoClaseLalo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29822D729E47C5B00855C48 /* emilianoClaseLaloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emilianoClaseLaloApp.swift; sourceTree = "<group>"; };
 		A29822D929E47C5B00855C48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,9 +76,28 @@
 			path = renglones;
 			sourceTree = "<group>";
 		};
+		A241AEEE2A02D0D600D41BFB /* enviromentObjects */ = {
+			isa = PBXGroup;
+			children = (
+				A241AEEF2A02D0F100D41BFB /* EnviromentObjectsClass.swift */,
+			);
+			path = enviromentObjects;
+			sourceTree = "<group>";
+		};
+		A241AEF12A02D36D00D41BFB /* generic */ = {
+			isa = PBXGroup;
+			children = (
+				6153AA7029F5BD3E00D0CE4E /* models.swift */,
+				6153AA6C29F59BE200D0CE4E /* Libs.swift */,
+			);
+			path = generic;
+			sourceTree = "<group>";
+		};
 		A29822CB29E47C5B00855C48 = {
 			isa = PBXGroup;
 			children = (
+				A241AEF12A02D36D00D41BFB /* generic */,
+				A241AEEE2A02D0D600D41BFB /* enviromentObjects */,
 				A29822D629E47C5B00855C48 /* emilianoClaseLalo */,
 				A29822D529E47C5B00855C48 /* Products */,
 			);
@@ -93,20 +114,18 @@
 		A29822D629E47C5B00855C48 /* emilianoClaseLalo */ = {
 			isa = PBXGroup;
 			children = (
-				6153AA7F29F621F200D0CE4E /* renglones */,
-				6153AA7E29F621BE00D0CE4E /* calculadora */,
 				A29822D729E47C5B00855C48 /* emilianoClaseLaloApp.swift */,
 				A29822D929E47C5B00855C48 /* ContentView.swift */,
-				A29822DB29E47C5C00855C48 /* Assets.xcassets */,
+				6153AA7F29F621F200D0CE4E /* renglones */,
+				6153AA7E29F621BE00D0CE4E /* calculadora */,
 				A29822DD29E47C5C00855C48 /* Preview Content */,
+				A29822DB29E47C5C00855C48 /* Assets.xcassets */,
 				6153AA7829F5D6C500D0CE4E /* menuNavegadores.swift */,
 				6153AA6E29F5BB1600D0CE4E /* navegacion.swift */,
 				6153AA7229F5BF1200D0CE4E /* MateriaCustom.swift */,
 				6153AA7429F5CC1200D0CE4E /* newTarea.swift */,
 				6153AA7A29F5D8B500D0CE4E /* navegacionTable.swift */,
 				6153AA7C29F60F1A00D0CE4E /* newMateria.swift */,
-				6153AA7029F5BD3E00D0CE4E /* models.swift */,
-				6153AA6C29F59BE200D0CE4E /* Libs.swift */,
 			);
 			path = emilianoClaseLalo;
 			sourceTree = "<group>";
@@ -200,6 +219,7 @@
 				6153AA7B29F5D8B500D0CE4E /* navegacionTable.swift in Sources */,
 				A29822DA29E47C5B00855C48 /* ContentView.swift in Sources */,
 				6153AA8129F6406500D0CE4E /* TareaRenglonCustom.swift in Sources */,
+				A241AEF02A02D0F100D41BFB /* EnviromentObjectsClass.swift in Sources */,
 				6153AA7729F5D45B00D0CE4E /* materiaRenglonCustom.swift in Sources */,
 				6153AA7529F5CC1200D0CE4E /* newTarea.swift in Sources */,
 				A29822D829E47C5B00855C48 /* emilianoClaseLaloApp.swift in Sources */,

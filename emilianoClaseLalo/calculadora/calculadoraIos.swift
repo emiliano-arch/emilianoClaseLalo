@@ -10,8 +10,8 @@ import SwiftUI
 struct calculadoraIos: View {
     
     
-    @ObservedObject var estadoCalculadora : EstadoCalculadora = EstadoCalculadora()
-
+   // @ObservedObject var estadoCalculadora : EstadoCalculadora = EstadoCalculadora()
+    @EnvironmentObject var estadoCalculadora : EstadoCalculadora
     
     var body: some View {
         
@@ -28,31 +28,31 @@ struct calculadoraIos: View {
                 Text("Debug Operacion:\(estadoCalculadora.operacion) num1 : \(estadoCalculadora.num1)").foregroundColor(.white)
                 Divider()
                 HStack{
-                    botonesNumeros(estadoCalculadora: estadoCalculadora, lblNumero: "1")
-                    botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "2")
-                    botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "3")
-                    botonesAcciones(estadoCalculadora: estadoCalculadora,lblsimbolo: "x")
+                    botonesNumeros( lblNumero: "1")
+                    botonesNumeros(lblNumero: "2")
+                    botonesNumeros(lblNumero: "3")
+                    botonesAcciones(lblsimbolo: "x")
                     
                 }
                 HStack{
-                    botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "4")
-                    botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "5")
-                    botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "6")
-                    botonesAcciones(estadoCalculadora: estadoCalculadora,lblsimbolo: "+")
+                    botonesNumeros(lblNumero: "4")
+                    botonesNumeros(lblNumero: "5")
+                    botonesNumeros(lblNumero: "6")
+                    botonesAcciones(lblsimbolo: "+")
                 }
                 HStack{
-                    botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "7")
-                    botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "8")
-                    botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "9")
-                    botonesAcciones(estadoCalculadora: estadoCalculadora,lblsimbolo: "-")
+                    botonesNumeros(lblNumero: "7")
+                    botonesNumeros(lblNumero: "8")
+                    botonesNumeros(lblNumero: "9")
+                    botonesAcciones(lblsimbolo: "-")
                 }
                 HStack{
-                    botonesNumeros(estadoCalculadora: estadoCalculadora,lblNumero: "0")
+                    botonesNumeros(lblNumero: "0")
                     
-                    cleanAllBoton(estadoCalculadora: estadoCalculadora)
+                    cleanAllBoton()
                     
-                    botonIgual(estadoCalculadora: estadoCalculadora)
-                    botonesAcciones(estadoCalculadora: estadoCalculadora,lblsimbolo: "/")
+                    botonIgual()
+                    botonesAcciones(lblsimbolo: "/")
                 }
                 
                 Spacer()
@@ -69,7 +69,7 @@ struct calculadoraIos: View {
 
 struct calculadoraIos_Previews: PreviewProvider {
     static var previews: some View {
-        calculadoraIos()
+        calculadoraIos().environmentObject(EstadoCalculadora())
     }
 }
 

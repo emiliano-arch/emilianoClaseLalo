@@ -43,7 +43,7 @@ struct TareasCustom: View {
 //MARK: Funciones de asignacion
 
 struct asignarMaterias: View {
-    @ObservedObject var materiasList : Materias
+    @EnvironmentObject var materiasList : Materias
     @State var show = false
     
     
@@ -53,7 +53,7 @@ struct asignarMaterias: View {
                 show.toggle()
             }
             .fullScreenCover(isPresented: $show, content: {
-                newMateria(materiasList: materiasList)
+                newMateria()
             })
             
             
@@ -63,7 +63,7 @@ struct asignarMaterias: View {
 }
 
 struct asignarTarea: View {
-    @ObservedObject var materiasList : Materias
+    @EnvironmentObject var materiasList : Materias
     @State var show = false
     var opcion: options
     var indiceMateria :Int
@@ -75,7 +75,7 @@ struct asignarTarea: View {
                 show.toggle()
             }
             .fullScreenCover(isPresented: $show, content: {
-                newTarea(opcion: opcion, materiasList: materiasList, indiceMateria: indiceMateria)
+                newTarea(opcion: opcion, indiceMateria: indiceMateria)
             })
             
             
@@ -105,7 +105,7 @@ struct CustomColorBoton: View {
 
 struct cleanAllBoton: View {
     
-    @ObservedObject var estadoCalculadora : EstadoCalculadora
+    @EnvironmentObject var estadoCalculadora : EstadoCalculadora
     
     var body: some View {
         Button(action: {
@@ -127,7 +127,7 @@ struct cleanAllBoton: View {
 }
 
 struct botonesNumeros: View {
-    @ObservedObject var estadoCalculadora : EstadoCalculadora
+    @EnvironmentObject var estadoCalculadora : EstadoCalculadora
     var lblNumero : String
     
     var body: some View {
@@ -143,7 +143,7 @@ struct botonesNumeros: View {
 
 struct botonIgual: View {
     
-    @ObservedObject var estadoCalculadora : EstadoCalculadora
+    @EnvironmentObject var estadoCalculadora : EstadoCalculadora
     
     var body: some View {
         Button(action: {
@@ -161,7 +161,7 @@ struct botonIgual: View {
 
 struct botonesAcciones: View {
     
-    @ObservedObject var estadoCalculadora : EstadoCalculadora
+    @EnvironmentObject var estadoCalculadora : EstadoCalculadora
     
     var lblsimbolo: String
     

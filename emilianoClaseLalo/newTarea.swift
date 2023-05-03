@@ -10,7 +10,7 @@ import SwiftUI
 struct newTarea: View {
     var opcion : options
     @State var tareaName : String = ""
-    @ObservedObject var materiasList : Materias
+    @EnvironmentObject var materiasList : Materias
     @Environment(\.presentationMode) var presentationModeTarea
     
     var indiceTarea: Int?
@@ -67,6 +67,6 @@ struct newTarea: View {
 struct newTarea_Previews: PreviewProvider {
     static var previews: some View {
         @ObservedObject var materiasList : Materias = Materias()
-        newTarea(opcion: options.EDIT, materiasList: materiasList, indiceMateria: 0)
+        newTarea(opcion: options.EDIT, indiceMateria: 0)
     }
 }

@@ -13,7 +13,8 @@ struct emilianoClaseLaloApp: App {
         WindowGroup {
             //ContentView()
             //calculadoraIos()
-            menuNavegadores()
+            //menuNavegadores()
+            EnviromentObjectsClass()
         }
     }
 }

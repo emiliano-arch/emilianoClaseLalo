@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct navegacionTable: View {
-    @ObservedObject var materiasList : Materias = Materias()
+    @EnvironmentObject var materiasList : Materias
     
     
     var body: some View {
@@ -20,7 +20,7 @@ struct navegacionTable: View {
                 List{
                     ForEach(0..<$materiasList.List.count, id: \.self) { index in
     
-                        NavigationLink(destination: MateriaCustom(materia:materiasList, numIndex: index)) {
+                        NavigationLink(destination: MateriaCustom( numIndex: index)) {
                                 materiaRenglonCustom(materiaPrueba: $materiasList.List[index].wrappedValue)
                             
 
@@ -29,7 +29,7 @@ struct navegacionTable: View {
                     }
                 }
                     .navigationTitle("Materias")
-                    asignarMaterias(materiasList: materiasList)
+                    asignarMaterias()
             }
         }
     }
@@ -38,6 +38,6 @@ struct navegacionTable: View {
 struct navegacionTable_Previews: PreviewProvider {
     static var previews: some View {
         
-        navegacionTable()
+        navegacionTable().environmentObject(Materias())
     }
 }

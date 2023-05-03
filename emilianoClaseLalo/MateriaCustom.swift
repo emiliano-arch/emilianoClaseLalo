@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MateriaCustom: View {
-    @ObservedObject var materia : Materias
+    @EnvironmentObject var materia : Materias
     @State var show = false
     
     @State var numIndex : Int
@@ -21,7 +21,7 @@ struct MateriaCustom: View {
                 List{
                     ForEach(0..<materia.List[numIndex].tareas.count, id: \.self) { index in
     
-                        NavigationLink(destination: newTarea(opcion: options.EDIT, tareaName: materia.List[numIndex].tareas[index].tareaName, materiasList: materia,indiceTarea: index, indiceMateria: numIndex) ) {
+                        NavigationLink(destination: newTarea(opcion: options.EDIT, tareaName: materia.List[numIndex].tareas[index].tareaName, indiceTarea: index, indiceMateria: numIndex) ) {
                             TareaRenglonCustom(tareaUnica: materia.List[numIndex].tareas[index])
                                                         
                         }
@@ -33,7 +33,7 @@ struct MateriaCustom: View {
             Spacer()
            
            VStack{
-               asignarTarea(materiasList: materia, opcion: options.ADD, indiceMateria: numIndex)
+               asignarTarea(opcion: options.ADD, indiceMateria: numIndex)
                
            }
         }
@@ -44,10 +44,8 @@ struct MateriaCustom: View {
  
  
  static var previews: some View {
- @ObservedObject var materiaPrueba: Materias = Materias()
  
- 
- MateriaCustom(materia: materiaPrueba, numIndex: 0)
+ MateriaCustom(numIndex: 0)
  }
  }
  

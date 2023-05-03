@@ -9,7 +9,7 @@ import SwiftUI
 
 struct newMateria: View {
     @State var newMateria : String = ""
-    @ObservedObject var materiasList : Materias
+    @EnvironmentObject var materiasList : Materias
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -42,7 +42,7 @@ struct newMateria: View {
 
 struct newMateria_Previews: PreviewProvider {
     static var previews: some View {
-        @ObservedObject var materiasList : Materias = Materias()
-        newMateria(materiasList: materiasList)
+        
+        newMateria()
     }
 }
